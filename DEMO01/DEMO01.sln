@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cliente", "Cliente\Cliente.csproj", "{7B35579C-FD29-4A49-A731-FAD371992070}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Servidor", "Servidor\Servidor.csproj", "{993FBBFC-A2E5-4259-A9D3-2ACE74ED9B35}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Compartir", "Compartir\Compartir.csproj", "{F82FFC13-A59B-44E4-A078-EB38D099E835}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecondClient", "SecondClient\SecondClient.csproj", "{D407CB41-EE53-468D-B127-9DFF3A600300}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +27,10 @@ Global
 		{F82FFC13-A59B-44E4-A078-EB38D099E835}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F82FFC13-A59B-44E4-A078-EB38D099E835}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F82FFC13-A59B-44E4-A078-EB38D099E835}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D407CB41-EE53-468D-B127-9DFF3A600300}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D407CB41-EE53-468D-B127-9DFF3A600300}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D407CB41-EE53-468D-B127-9DFF3A600300}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D407CB41-EE53-468D-B127-9DFF3A600300}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
