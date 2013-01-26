@@ -23,7 +23,8 @@ namespace Compartir
         void LogMessage(string message);
         [OperationContract]
         void LogMessageObject(LogMessage message);
-        
+        [OperationContract]
+        TraceResponse Trace(TraceRequest trace);
 
     }
 }

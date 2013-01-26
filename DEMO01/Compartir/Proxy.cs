@@ -22,5 +22,11 @@ namespace Compartir
         {
             base.Channel.LogMessageObject(message);
         }
+
+
+        public TraceResponse Trace(TraceRequest trace)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

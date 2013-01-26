@@ -12,13 +12,16 @@ namespace Cliente
         {
             Console.WriteLine("Cliente");
             Console.ReadLine();
-            customproxy();
+            runtime();
             Console.ReadLine();  
         }
         public static  void runtime()
         {
             var proxy = new ChannelFactory<Compartir.ILog>("cliente").CreateChannel();
             proxy.LogMessage("log cliente");
+
+            proxy.Trace(new Compartir.TraceRequest() { Audit = DateTime.Now.ToLongTimeString(), Message = "mensaje del cliente" });
+
             ((IClientChannel)proxy).Close();  
         }
         public static void customproxy()

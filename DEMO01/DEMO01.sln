@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecondClient", "SecondClien
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogWinService", "LogWinService\LogWinService.csproj", "{B6219C15-47AE-43D0-AAC8-4B525E228EF7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogWebApp", "LogWebApp\LogWebApp.csproj", "{70D946BB-23BA-445D-8CFF-EA37A3713492}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,16 @@ Global
 		{B6219C15-47AE-43D0-AAC8-4B525E228EF7}.Release|Mixed Platforms.Build.0 = Release|x86
 		{B6219C15-47AE-43D0-AAC8-4B525E228EF7}.Release|x86.ActiveCfg = Release|x86
 		{B6219C15-47AE-43D0-AAC8-4B525E228EF7}.Release|x86.Build.0 = Release|x86
+		{70D946BB-23BA-445D-8CFF-EA37A3713492}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70D946BB-23BA-445D-8CFF-EA37A3713492}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70D946BB-23BA-445D-8CFF-EA37A3713492}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{70D946BB-23BA-445D-8CFF-EA37A3713492}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{70D946BB-23BA-445D-8CFF-EA37A3713492}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{70D946BB-23BA-445D-8CFF-EA37A3713492}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70D946BB-23BA-445D-8CFF-EA37A3713492}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70D946BB-23BA-445D-8CFF-EA37A3713492}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{70D946BB-23BA-445D-8CFF-EA37A3713492}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{70D946BB-23BA-445D-8CFF-EA37A3713492}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

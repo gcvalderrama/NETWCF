@@ -19,5 +19,11 @@ namespace Servidor
         {
             Console.WriteLine(message.ToString());  
         }
+
+
+        public Compartir.TraceResponse Trace(Compartir.TraceRequest trace)
+        {
+            return new Compartir.TraceResponse();
+        }
     }
 }

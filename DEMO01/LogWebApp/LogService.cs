@@ -1,19 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Web;
+using System.ServiceModel.Activation;
 using System.IO;
 
-namespace LogWinService
+namespace LogWebApp
 {
+    [AspNetCompatibilityRequirements( RequirementsMode= AspNetCompatibilityRequirementsMode.Required)]
     public class LogService : Compartir.ILog
     {
         public void LogMessage(string message)
         {
-            File.AppendAllText(@"C:\NETWCF\NETWCF\DEMO01\LogWinService\bin\Debug\salida.txt", message);
-        }
+           
+            File.AppendAllText(AppDomain.CurrentDomain.BaseDirectory + "/salida.txt", message);
 
-        public void LogMessageObject(Compartir.LogMessage message)
+            //HttpContext.Current.Trace.Warn(message); 
+        }
+        
+
+        public void LogMessageObject(Compartir.LogMessage    message)
         {
             throw new NotImplementedException();
         }
