@@ -11,6 +11,7 @@ namespace Cliente
     {
         static void Main(string[] args)
         {
+            AppDomain.CurrentDomain.SetPrincipalPolicy(System.Security.Principal.PrincipalPolicy.WindowsPrincipal);
             Console.WriteLine("Cliente");
             Console.ReadLine();
 
@@ -23,9 +24,10 @@ namespace Cliente
         public static void RuntimeSecurity()
         {
             var factory = new ChannelFactory<Compartir.ILog>("basic");
-            factory.Credentials.UserName.UserName = "developer";
-            factory.Credentials.UserName.Password= "Pa$$w0rd";  
-
+            //factory.Credentials.UserName.UserName = "developer";
+            //factory.Credentials.UserName.Password = "Pa$$w0rd";  
+            factory.Credentials.Windows.ClientCredential = System.Net.CredentialCache.DefaultNetworkCredentials;
+            
             var proxy = factory.CreateChannel();
 
             proxy.LogMessage("cliente at " + DateTime.Now.ToLongTimeString() );  
