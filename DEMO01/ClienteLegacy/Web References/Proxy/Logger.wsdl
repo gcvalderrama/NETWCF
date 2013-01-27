@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Logger" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://127.0.0.1:7005/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://127.0.0.1:7005/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://127.0.0.1:7005/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Compartir" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ILog_LogMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogMessage" />
+  </wsdl:message>
+  <wsdl:message name="ILog_LogMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILog_LogMessageObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogMessageObject" />
+  </wsdl:message>
+  <wsdl:message name="ILog_LogMessageObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogMessageObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="TraceRequest">
+    <wsdl:part name="parameters" element="tns:TraceRequest" />
+  </wsdl:message>
+  <wsdl:message name="TraceRequest_Headers">
+    <wsdl:part name="Audit" element="tns:Audit" />
+  </wsdl:message>
+  <wsdl:message name="TraceResponse">
+    <wsdl:part name="parameters" element="tns:TraceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ILog">
+    <wsdl:operation name="LogMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILog/LogMessage" message="tns:ILog_LogMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILog/LogMessageResponse" message="tns:ILog_LogMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogMessageObject">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILog/LogMessageObject" message="tns:ILog_LogMessageObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILog/LogMessageObjectResponse" message="tns:ILog_LogMessageObject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Trace">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILog/Trace" name="TraceRequest" message="tns:TraceRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILog/TraceResponse" name="TraceResponse" message="tns:TraceResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ILog" type="tns:ILog">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LogMessage">
+      <soap:operation soapAction="http://tempuri.org/ILog/LogMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogMessageObject">
+      <soap:operation soapAction="http://tempuri.org/ILog/LogMessageObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Trace">
+      <soap:operation soapAction="http://tempuri.org/ILog/Trace" style="document" />
+      <wsdl:input name="TraceRequest">
+        <soap:header message="tns:TraceRequest_Headers" part="Audit" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="TraceResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Logger">
+    <wsdl:port name="BasicHttpBinding_ILog" binding="tns:BasicHttpBinding_ILog">
+      <soap:address location="http://lt-per-00045158.am.tmrk.corp:7004/logger" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

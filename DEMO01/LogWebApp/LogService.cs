@@ -4,11 +4,12 @@ using System.Linq;
 using System.Web;
 using System.ServiceModel.Activation;
 using System.IO;
+using Compartir;
 
 namespace LogWebApp
 {
     [AspNetCompatibilityRequirements( RequirementsMode= AspNetCompatibilityRequirementsMode.Required)]
-    public class LogService : Compartir.ILog
+    public class LogService : Compartir.ILog, ILogQuery
     {
         public void LogMessage(string message)
         {
@@ -28,6 +29,15 @@ namespace LogWebApp
         public Compartir.TraceResponse Trace(Compartir.TraceRequest trace)
         {
             throw new NotImplementedException();
+        }
+
+        public List<string> GetMessages()
+        {
+            var men = new List<string>();
+            men.Add("mensaje 1");
+            men.Add("mensaje 2");
+            men.Add("mensaje 3");
+            return men; 
         }
     }
 }

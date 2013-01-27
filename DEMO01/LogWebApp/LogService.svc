@@ -1,1 +1,3 @@
-﻿<%@ ServiceHost Service="LogWebApp.LogService" %>
+﻿<%@ ServiceHost Service="LogWebApp.LogService"%>
+
+     

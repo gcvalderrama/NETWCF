@@ -2,6 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cliente", "Cliente\Cliente.csproj", "{7B35579C-FD29-4A49-A731-FAD371992070}"
+	ProjectSection(ProjectDependencies) = postProject
+		{70D946BB-23BA-445D-8CFF-EA37A3713492} = {70D946BB-23BA-445D-8CFF-EA37A3713492}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Servidor", "Servidor\Servidor.csproj", "{993FBBFC-A2E5-4259-A9D3-2ACE74ED9B35}"
 EndProject
@@ -12,6 +15,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogWinService", "LogWinService\LogWinService.csproj", "{B6219C15-47AE-43D0-AAC8-4B525E228EF7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogWebApp", "LogWebApp\LogWebApp.csproj", "{70D946BB-23BA-445D-8CFF-EA37A3713492}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClienteLegacy", "ClienteLegacy\ClienteLegacy.csproj", "{E6779A3C-E306-48F1-A4AE-5EE9EA929D21}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,6 +88,16 @@ Global
 		{70D946BB-23BA-445D-8CFF-EA37A3713492}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{70D946BB-23BA-445D-8CFF-EA37A3713492}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{70D946BB-23BA-445D-8CFF-EA37A3713492}.Release|x86.ActiveCfg = Release|Any CPU
+		{E6779A3C-E306-48F1-A4AE-5EE9EA929D21}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{E6779A3C-E306-48F1-A4AE-5EE9EA929D21}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{E6779A3C-E306-48F1-A4AE-5EE9EA929D21}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{E6779A3C-E306-48F1-A4AE-5EE9EA929D21}.Debug|x86.ActiveCfg = Debug|x86
+		{E6779A3C-E306-48F1-A4AE-5EE9EA929D21}.Debug|x86.Build.0 = Debug|x86
+		{E6779A3C-E306-48F1-A4AE-5EE9EA929D21}.Release|Any CPU.ActiveCfg = Release|x86
+		{E6779A3C-E306-48F1-A4AE-5EE9EA929D21}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{E6779A3C-E306-48F1-A4AE-5EE9EA929D21}.Release|Mixed Platforms.Build.0 = Release|x86
+		{E6779A3C-E306-48F1-A4AE-5EE9EA929D21}.Release|x86.ActiveCfg = Release|x86
+		{E6779A3C-E306-48F1-A4AE-5EE9EA929D21}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

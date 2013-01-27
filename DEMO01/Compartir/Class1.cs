@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using System.ServiceModel.Web;
 
 namespace Compartir
 {
@@ -16,15 +17,26 @@ namespace Compartir
         public DateTime date {get;set;}
     }
 
-    [ServiceContract]
+    [ServiceContract ()]
     public interface ILog
     {
-        [OperationContract]
+        [OperationContract(IsOneWay = true)]
+        [TransactionFlow(TransactionFlowOption.Allowed)]
         void LogMessage(string message);
-        [OperationContract]
+        [OperationContract(IsOneWay = true)]
         void LogMessageObject(LogMessage message);
-        [OperationContract]
-        TraceResponse Trace(TraceRequest trace);
+        //[OperationContract]
+        //TraceResponse Trace(TraceRequest trace);       
 
     }
+    [ServiceContract]
+    public interface ILogQuery
+    {
+        [OperationContract]
+        [WebGet(ResponseFormat = WebMessageFormat.Json )]
+        List<string> GetMessages();  
+
+ 
+    }
+
 }
